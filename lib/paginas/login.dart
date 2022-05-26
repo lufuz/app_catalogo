@@ -52,11 +52,13 @@ class Login extends StatefulWidget {
                     height: 20.0,
                   ),
                   InkWell(
-                    onTap:(){
+                    onTap:() async{
                       setState(() {
                         changeButton=true;
                       });
-                      // Navigator.pushNamed(context, MyRoutes.homeRoute);
+
+                      await Future.delayed(Duration (seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child:AnimatedContainer(
                       duration: Duration(seconds: 1),
