@@ -1,3 +1,4 @@
+import 'package:app_catalogo/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -5,16 +6,18 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
+        child: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset(
               "assets/images/green_login.png",
               fit: BoxFit.cover,
+              
             ),
             Text(
               "Inicio de sesión",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -44,15 +47,15 @@ class Login extends StatelessWidget {
                   ),
                   ElevatedButton(
                     child: Text("Iniciar sesión"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(minimumSize:Size(150, 40)),
                     onPressed: () {
-                      print("¡Bienvenid@!");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                   )
                 ],
               ),
             )
           ],
-        ));
+        )));
   }
 }
