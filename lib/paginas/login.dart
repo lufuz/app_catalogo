@@ -26,6 +26,7 @@ class _LoginState extends State<Login> {
     }
   }
 
+/*Construccion de los elementos del login (campos de texto y boton de accion*/
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -56,12 +57,13 @@ class _LoginState extends State<Login> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+                        icon: Icon(Icons.email),
                         hintText: "Ingrese su correo electrónico",
                         labelText: "Correo electrónico",
                       ),
                       validator: (value) {
+                        // value!.isEmpty porque el campo es de tipo String, entonces primero revisa que el valor no sea null antes de revisar si está vacío
                         if (value!.isEmpty) {
-                          // value!.isEmpty porque el campo es de tipo String, entonces primero revisa que el valor no sea null antes de revisar si está vacío
                           return "El campo no puede estar vacío";
                         }
                         return null;
@@ -74,7 +76,8 @@ class _LoginState extends State<Login> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        hintText: "Ingrese su correo contraseña",
+                        icon: Icon(Icons.password),
+                        hintText: "Ingrese su contraseña",
                         labelText: "Contraseña",
                       ),
                       validator: (value) {

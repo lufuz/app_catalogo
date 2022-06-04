@@ -14,11 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /* ThemeMode ayuda a personalizar elementos de la interfaz, dependiendo los atributos otorgados al tema oscuro y claro;
+       esto se basa en las preferencias del usuario (que tema tiene en su dispositivo*/
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
+      //Se declara la ruta de inicio, es decir, la interfaz que se mostrará al ejecutar la aplicación, así como las demás rutas disponibles para navegar por la app
       initialRoute: "/login",
       routes: {
         "/": (context) => Login(),
