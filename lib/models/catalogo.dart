@@ -2,7 +2,7 @@
   que estarán disponibles y se mostrarán en el catálogo */
 
 class CatalogoModelo {
-  static final items = [
+  static List<Producto> items = [
     Producto(
         id: 1,
         nombre: "Maceta Viena Chocolate",
@@ -30,13 +30,20 @@ class Producto {
       required this.imgURL});
 
 /* Se convierte el objeto al formato Map, que es del tipo clave-valor para poder almacenarlo en la base de datos */
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'nombre': nombre,
-      'descripcion': descrip,
-      'precio': precio,
-      'imgURL': imgURL,
-    };
+  factory Producto.fromMap(Map<String, dynamic> map) {
+    return Producto(
+        id: map["id"],
+        nombre: map["nombre"],
+        descrip: map["descrip"],
+        precio: map["precio"],
+        imgURL: map["imgURL"]);
   }
+
+  toMap() => {
+        "id": id,
+        "nombre": nombre,
+        "descrip": descrip,
+        "precio": precio,
+        "imgURL": imgURL
+      };
 }
