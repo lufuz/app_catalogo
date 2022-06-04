@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/catalogo.dart';
 
 class ItemWidget extends StatelessWidget {
-  final Item item;
+  final Producto item;
 
   const ItemWidget({Key? key, required this.item})
       : assert(item != null),
@@ -20,9 +20,9 @@ class ItemWidget extends StatelessWidget {
         },
         leading: Image.network(item.imgURL),
         title: Text(item.nombre),
-        subtitle: Text(item.desc),
+        subtitle: Text(item.descrip),
         trailing: Text(
-          "\$${item.price.toString()}",
+          "\$${item.precio.toString()}",
           textScaleFactor: 1.5,
           style: TextStyle(
             color: Colors.lightGreen.shade900,
