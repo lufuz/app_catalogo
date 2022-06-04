@@ -1,0 +1,44 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Maceta Viena Chocolate",
+            "descrip": "2 macetas plásticas de 16 pulgadas de diámetro. Color chocolate.",
+            "precio": 189,
+            "imgURL": "https://cdn.homedepot.com.mx/productos/102050/102050-d.jpg"
+
+        },
+        {
+            "id": 2,
+            "nombre": "Pistola para riego Truper",
+            "descrip": "Fabricada con plástico ABS para proporcionar mayor resistencia y durabilidad.",
+            "precio": 85,
+            "imgURL": "https://cdn.homedepot.com.mx/productos/162695/162695-d.jpg"
+
+        },
+        {
+            "id": 3,
+            "nombre": "Insecticida naranja RAID",
+            "descrip": "Elimina moscas, mosquitos, cucarachas, hormigas, arañas y pulgas.",
+            "precio": 69.50,
+            "imgURL": "https://cdn.homedepot.com.mx/productos/960499/960499-d.jpg"
+
+        },
+        {
+            "id": 4,
+            "nombre": "Planta Tulipan Mexicano",
+            "descrip": "Planta de sol. Riego 3 veces por semana. Varios colores.",
+            "precio": 62,
+            "imgURL": "https://cdn.homedepot.com.mx/productos/500213/500213-z.jpg"
+
+        },
+        {
+            "id": 5,
+            "nombre": "Motosierra High Power 52 CC",
+            "descrip": "Fabricada con un motor de 52 cc de 2 tiempos y cadena de 20 pulgadas adecuada para cortar leña y talar árboles medianos.",
+            "precio": 2099,
+            "imgURL": "https://www.hepsa.mx/image/cache/catalog/HIGH%20POWER/52CCC-550x550..jpg"
+
+        }
+    ]
+}
