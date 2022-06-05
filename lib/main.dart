@@ -1,5 +1,5 @@
-import 'package:app_catalogo/paginas/login.dart';
-import 'package:app_catalogo/paginas/pagina_inicio.dart';
+import 'package:app_catalogo/pages/login.dart';
+import 'package:app_catalogo/pages/pagina_inicio.dart';
 import 'package:app_catalogo/utils/routes.dart';
 import 'package:app_catalogo/widgets/themes.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       //Se declara la ruta de inicio, es decir, la interfaz que se mostrará al ejecutar la aplicación, así como las demás rutas disponibles para navegar por la app
-      initialRoute: "/login",
+      initialRoute: "/home",
       routes: {
         "/": (context) => Login(),
         MyRoutes.homeRoute: (context) => HomePage(),
