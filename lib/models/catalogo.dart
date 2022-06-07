@@ -2,15 +2,14 @@
   que estarán disponibles y se mostrarán en el catálogo */
 
 class CatalogoModelo {
-  static List<Producto> items = [
-    Producto(
-        id: 1,
-        nombre: "Maceta Viena Chocolate",
-        descrip:
-            "2 macetas plásticas de 16 pulgadas de diámetro. Color chocolate.",
-        precio: 189,
-        imgURL: "https://cdn.homedepot.com.mx/productos/102050/102050-d.jpg")
-  ];
+  static List<Producto> items = [];
+
+  //Get Item by ID
+  static Producto getByID(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get Item by position
+  static Producto getByPosition(int position) => items[position];
 }
 
 class Producto {
