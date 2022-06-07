@@ -1,15 +1,15 @@
-/*Se declara la clase Item, que contiene las características que cada uno de los productos
+/*Se declara la clase Producto, que contiene las características que cada uno de los productos
   que estarán disponibles y se mostrarán en el catálogo */
 
 class CatalogoModelo {
   static List<Producto> items = [];
 
   //Get Item by ID
-  static Producto getByID(int id) =>
+  Producto getByID(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
   //Get Item by position
-  static Producto getByPosition(int position) => items[position];
+  Producto getByPosition(int position) => items[position];
 }
 
 class Producto {
