@@ -3,7 +3,6 @@ import 'package:app_catalogo/pages/pagina_inicio_detalles.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:app_catalogo/widgets/themes.dart';
-
 import '../../models/catalogo.dart';
 import 'catalogo_imagen.dart';
 
@@ -67,7 +66,7 @@ class CatalogoItem extends StatelessWidget {
                           shape: MaterialStateProperty.all(
                         StadiumBorder(),
                       )),
-                      child: "Comprar".text.make())
+                      child: "Añadir".text.make())
                 ],
               ).pOnly(right: 8.0)
             ],

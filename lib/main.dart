@@ -1,4 +1,5 @@
 import 'package:app_catalogo/pages/login.dart';
+import 'package:app_catalogo/pages/pagina_carrito.dart';
 import 'package:app_catalogo/pages/pagina_inicio.dart';
 import 'package:app_catalogo/utils/routes.dart';
 import 'package:app_catalogo/widgets/themes.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => Login(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.cartRoute: (context) => PaginaCarrito(),
       },
     );
   }
