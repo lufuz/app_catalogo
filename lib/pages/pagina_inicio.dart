@@ -1,7 +1,11 @@
 //@dart=2.9
 
+import 'package:app_catalogo/db.dart';
 import 'package:app_catalogo/models/catalogo.dart';
+import 'package:app_catalogo/pages/pagina_carrito.dart';
+import 'package:app_catalogo/utils/routes.dart';
 import 'package:app_catalogo/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -19,9 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int days = 30;
-
-  final String name = "Green House";
+  List<Producto> _productos = [];
 
   @override
   /* Este metodo es de la clase State y solo se llama una vez cuando requerimos
@@ -51,6 +53,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.colorFondo,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,

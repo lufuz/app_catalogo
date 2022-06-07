@@ -3,6 +3,9 @@ import 'package:app_catalogo/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+/* Clase donde se construye la estructura de la pagina de detalles
+de los diferentes productos */
+
 class HomeDetailsPage extends StatelessWidget {
   final Producto catalogo;
 
@@ -26,7 +29,7 @@ class HomeDetailsPage extends StatelessWidget {
                       shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-                  child: "Comprar".text.make())
+                  child: "Añadir".text.make())
               .wh(100, 45),
         ],
       ).p32(),

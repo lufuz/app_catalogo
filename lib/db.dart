@@ -10,8 +10,7 @@ class DB {
     /* Se tiene que pasar la ruta de la base de datos, se usa un join para
     obtener la ruta donde se guardan las bases de datos y para indicar cual
     fichero se usa en especifico*/
-    return openDatabase(
-        'C:/Users/Angela/Desktop/FlutterApps/app_catalogo/BD SQLitegreenhouseapp.db',
+    return openDatabase(join(await getDatabasesPath(), 'greenhouseapp.db'),
 
         // Si la base de datos no existe, se va a crear
         onCreate: (db, version) {
@@ -54,18 +53,22 @@ class DB {
   static Future<List<Producto>> productos() async {
     //se conecta con la base de datos
     Database database = await _openDB();
+    print("conexion exitosa");
 
     //se realiza la consulta a la base de datos
     final List<Map<String, dynamic>> productosMap =
         await database.query("productos");
 
-    return List.generate(
-        productosMap.length,
-        (i) => Producto(
-            id: productosMap[i]['id'],
-            nombre: productosMap[i]['nombre'],
-            descrip: productosMap[i]['descripcion'],
-            precio: productosMap[i]['precio'],
-            imgURL: productosMap[i]['imgURL']));
+    print(productosMap);
+
+    return List.generate(productosMap.length, (i) {
+      return Producto(
+        id: productosMap[i]['id'],
+        nombre: productosMap[i]['nombre'],
+        descrip: productosMap[i]['descripcion'],
+        precio: productosMap[i]['precio'],
+        imgURL: productosMap[i]['imgURL'],
+      );
+    });
   }
 }
