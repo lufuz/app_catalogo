@@ -1,15 +1,13 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:velocity_x/velocity_x.dart';
+
+import 'package:app_catalogo/core/tienda.dart';
 import 'package:app_catalogo/models/catalogo.dart';
 
 /*Se declara la clase Carrito, que contiene las características que cada uno de los productos
   que se seleccionan y se mostrarán en el catálogo */
 
 class CarritoModelo {
-  static final carritoModelo = CarritoModelo._internal();
-
-  CarritoModelo._internal();
-
-  factory CarritoModelo() => carritoModelo;
-
   late CatalogoModelo _catalogo;
 
   //coleccion de id's = tienda.id's de cada producto
@@ -30,14 +28,24 @@ class CarritoModelo {
   //se obtiene el precio total del carrito
   num get precioTotal =>
       productos.fold(0, (total, current) => total + current.precio);
+}
 
-  //agregar producto al carrito
-  void agregar(Producto producto) {
-    _itemIDs.add(producto.id);
+class AddMutation extends VxMutation<MyTienda> {
+  final Producto producto;
+
+  AddMutation(this.producto);
+  @override
+  perform() {
+    store.carrito._itemIDs.add(producto.id);
   }
+}
 
-  //eliminar producto del carrito
-  void eliminar(Producto producto) {
-    _itemIDs.remove(producto.id);
+class RemoveMutation extends VxMutation<MyTienda> {
+  final Producto producto;
+
+  RemoveMutation(this.producto);
+  @override
+  perform() {
+    store.carrito._itemIDs.remove(producto.id);
   }
 }

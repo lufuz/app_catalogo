@@ -2,12 +2,6 @@
   que estarán disponibles y se mostrarán en el catálogo */
 
 class CatalogoModelo {
-  static final catalogoModelo = CatalogoModelo._internal();
-
-  CatalogoModelo._internal();
-
-  factory CatalogoModelo() => catalogoModelo;
-
   static List<Producto> items = [];
 
   //Get Item by ID

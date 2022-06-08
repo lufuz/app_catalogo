@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../core/tienda.dart';
+
 /* Clase donde se contruyen los elementos de la pagina del
 carrito de compras, donde se despliegan los productos seleccionados */
 
@@ -29,13 +31,19 @@ class PaginaCarrito extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _carrito = CarritoModelo();
+    final CarritoModelo _carrito = (VxState.store as MyTienda).carrito;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_carrito.precioTotal}".text.xl3.bold.make(),
+          VxConsumer(
+            notifications: {},
+            mutations: {RemoveMutation},
+            builder: (context, _) {
+              return "\$${_carrito.precioTotal}".text.xl3.bold.make();
+            },
+          ),
           30.widthBox,
           ElevatedButton(
             onPressed: () {
@@ -51,15 +59,11 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CarritoLista extends StatefulWidget {
-  @override
-  _CarritoListaState createState() => _CarritoListaState();
-}
-
-class _CarritoListaState extends State<_CarritoLista> {
-  final _carrito = CarritoModelo();
+class _CarritoLista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    VxState.listen(context, to: [RemoveMutation]);
+    final CarritoModelo _carrito = (VxState.store as MyTienda).carrito;
     return _carrito.productos.isEmpty
         ? "Agrega productos al carrito".text.xl2.makeCentered()
         : ListView.builder(
@@ -68,10 +72,7 @@ class _CarritoListaState extends State<_CarritoLista> {
               leading: Icon(Icons.done),
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _carrito.eliminar(_carrito.productos[index]);
-                  setState(() {});
-                },
+                onPressed: () => RemoveMutation(_carrito.productos[index]),
               ),
               title: _carrito.productos[index].nombre.text.make(),
             ),
