@@ -4,7 +4,13 @@ import 'package:app_catalogo/models/catalogo.dart';
   que se seleccionan y se mostrarán en el catálogo */
 
 class CarritoModelo {
+  static final carritoModelo = CarritoModelo._internal();
+
+  CarritoModelo._internal();
+
   late CatalogoModelo _catalogo;
+
+  factory CarritoModelo() => carritoModelo;
 
   //coleccion de id's = tienda.id's de cada producto
   final List<int> _itemIDs = [];
