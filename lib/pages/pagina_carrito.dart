@@ -1,3 +1,4 @@
+import 'package:app_catalogo/models/carrito.dart';
 import 'package:app_catalogo/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class PaginaCarrito extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _CartLista().p32().expand(),
+          _CarritoLista().p32().expand(),
           Divider(),
           _CartTotal(),
         ],
@@ -28,12 +29,13 @@ class PaginaCarrito extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _carrito = CarritoModelo();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9999".text.xl3.bold.make(),
+          "\$${_carrito.precioTotal}".text.xl3.bold.make(),
           30.widthBox,
           ElevatedButton(
             onPressed: () {
@@ -49,18 +51,24 @@ class _CartTotal extends StatelessWidget {
   }
 }
 
-class _CartLista extends StatelessWidget {
+class _CarritoLista extends StatefulWidget {
+  @override
+  _CarritoListaState createState() => _CarritoListaState();
+}
+
+class _CarritoListaState extends State<_CarritoLista> {
+  final _carrito = CarritoModelo();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 15,
+      itemCount: _carrito.productos.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.done),
         trailing: IconButton(
           icon: Icon(Icons.remove_circle_outline),
           onPressed: () {},
         ),
-        title: "Producto 1".text.make(),
+        title: _carrito.productos[index].nombre.text.make(),
       ),
     );
   }
