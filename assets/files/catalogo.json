@@ -6,7 +6,6 @@
             "descrip": "2 macetas plásticas de 16 pulgadas de diámetro. Color chocolate.",
             "precio": 189,
             "imgURL": "https://i.imgur.com/CXG5qaB.png"
-
         },
         {
             "id": 2,
@@ -14,7 +13,6 @@
             "descrip": "Fabricada con plástico ABS para proporcionar mayor resistencia y durabilidad.",
             "precio": 85,
             "imgURL": "https://i.imgur.com/2HKfKUP.png"
-
         },
         {
             "id": 3,
@@ -22,7 +20,6 @@
             "descrip": "Elimina moscas, mosquitos, cucarachas, hormigas, arañas y pulgas.",
             "precio": 69.50,
             "imgURL": "https://i.imgur.com/Q0zJQzc.png"
-
         },
         {
             "id": 4,
@@ -30,7 +27,6 @@
             "descrip": "Planta de sol. Riego 3 veces por semana. Varios colores.",
             "precio": 62,
             "imgURL": "https://i.imgur.com/B2LrkW8.png"
-
         },
         {
             "id": 5,
@@ -38,7 +34,77 @@
             "descrip": "Fabricada con un motor de 52 cc de 2 tiempos y cadena de 20 pulgadas.",
             "precio": 2099,
             "imgURL": "https://i.imgur.com/Gk6tAUC.png"
-
+        },
+        {
+            "id": 6,
+            "nombre": "Planta Agave Kanjii",
+            "descrip": "Planta Agave Kanjii con maceta de plástico Floramundo, elemento decorativo para interiores y exteriores.",
+            "precio": 349,
+            "imgURL": "https://i.imgur.com/z7C2rMk.png"
+        },
+        {
+            "id": 7,
+            "nombre": "Planta Azalea",
+            "descrip": "Planta Azalea kanjii con maceta de plástico Floramundo, apta para interiores y exteriores a media luz.",
+            "precio": 67.50,
+            "imgURL": "https://i.imgur.com/Z6AgIwJ.png"
+        },
+        {
+            "id": 8,
+            "nombre": "Planta Belén Nueva Guinea",
+            "descrip": "Tiene flores color morado de agradable aroma, apta para interiores y exteriores a media sombra.",
+            "precio": 29,
+            "imgURL": "https://i.imgur.com/4Vl4qiH.png"
+        },
+        {
+            "id": 9,
+            "nombre": "Planta Palo de Brasil",
+            "descrip": "Planta Palo de Brasil con maceta de plástico Bgreen, complemento decorativo para los exteriores sombreados del hogar.",
+            "precio": 42,
+            "imgURL": "https://i.imgur.com/PKCxIuI.png"
+        },
+        {
+            "id": 10,
+            "nombre": "Planta Violeta",
+            "descrip": "Planta de sombra. Riego 1 vez por semana.",
+            "precio": 55,
+            "imgURL": "https://i.imgur.com/Ap55s3G.png"
+        },
+        {
+            "id": 11,
+            "nombre": "Carretilla de 1 rueda",
+            "descrip": "Carretilla con capacidad de 6 pies cúbicos, útil para el traslado de materiales.",
+            "precio": 1839,
+            "imgURL": "https://i.imgur.com/zWD9B5X.png"
+        },
+        {
+            "id": 12,
+            "nombre": "Escoba metálica Truper",
+            "descrip": "Ayuda en la limpieza de patios y jardines. Tiene cabeza de acero de 15 dientes y mango de madera.",
+            "precio": 85,
+            "imgURL": "https://i.imgur.com/1pNOvz2.png"
+        },
+        {
+            "id": 13,
+            "nombre": "Pala cuadrada Truper",
+            "descrip": "Pala de 40 pulgadas, para mover materiales de poco peso con mayor facilidad.",
+            "precio": 305,
+            "imgURL": "https://i.imgur.com/cRNIIUQ.png"
+        },
+        {
+            "id": 14,
+            "nombre": "Tijeras para pasto y seto Truper",
+            "descrip": "13 pulgadas, con mango cubierto de vinilo y material resistente a la corrosión.",
+            "precio": 195,
+            "imgURL": "https://i.imgur.com/WsEyVQo.png"
+        },
+        {
+            "id": 15,
+            "nombre": "Tijera tubular de poda Truper",
+            "descrip": "17 pulgadas, fabricada con hojas en acero con muesca para tallos o raíces gruesas.",
+            "precio": 215,
+            "imgURL": "https://i.imgur.com/9cr8qWn.png"
         }
+        
     ]
 }
