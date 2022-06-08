@@ -1,10 +1,10 @@
 /*Clase para construir la lista de productos*/
-import 'package:app_catalogo/models/carrito.dart';
 import 'package:app_catalogo/pages/pagina_inicio_detalles.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:app_catalogo/widgets/themes.dart';
 import '../../models/catalogo.dart';
+import 'agregar_al_carrito.dart';
 import 'catalogo_imagen.dart';
 
 class CatalogoLista extends StatelessWidget {
@@ -61,7 +61,7 @@ class CatalogoItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${catalogo.precio}".text.bold.xl.make(),
-                  _AddToCarrito(catalogo: catalogo)
+                  AddToCarrito(catalogo: catalogo)
                 ],
               ).pOnly(right: 8.0)
             ],
@@ -69,38 +69,5 @@ class CatalogoItem extends StatelessWidget {
         ],
       ),
     ).color(MyTheme.colorTarjeta).rounded.square(150).make().p8();
-  }
-}
-
-class _AddToCarrito extends StatefulWidget {
-  final Producto catalogo;
-  const _AddToCarrito({Key? key, required this.catalogo}) : super(key: key);
-
-  @override
-  State<_AddToCarrito> createState() => _AddToCarritoState();
-}
-
-class _AddToCarritoState extends State<_AddToCarrito> {
-  bool estaAgregado = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: "Producto añadido al carrito.".text.make(),
-        ));
-        final _catalogo = CatalogoModelo();
-        final _carrito = CarritoModelo();
-        _carrito.catalog = _catalogo;
-        _carrito.agregar(widget.catalogo);
-        setState(() {});
-      },
-      style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-        StadiumBorder(),
-      )),
-      child: "Añadir".text.make(),
-    );
   }
 }
