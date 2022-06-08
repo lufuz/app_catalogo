@@ -8,9 +8,9 @@ class CarritoModelo {
 
   CarritoModelo._internal();
 
-  late CatalogoModelo _catalogo;
-
   factory CarritoModelo() => carritoModelo;
+
+  late CatalogoModelo _catalogo;
 
   //coleccion de id's = tienda.id's de cada producto
   final List<int> _itemIDs = [];

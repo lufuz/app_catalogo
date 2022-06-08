@@ -60,16 +60,21 @@ class _CarritoListaState extends State<_CarritoLista> {
   final _carrito = CarritoModelo();
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: _carrito.productos.length,
-      itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
-        trailing: IconButton(
-          icon: Icon(Icons.remove_circle_outline),
-          onPressed: () {},
-        ),
-        title: _carrito.productos[index].nombre.text.make(),
-      ),
-    );
+    return _carrito.productos.isEmpty
+        ? "Agrega productos al carrito".text.xl2.makeCentered()
+        : ListView.builder(
+            itemCount: _carrito.productos.length,
+            itemBuilder: (context, index) => ListTile(
+              leading: Icon(Icons.done),
+              trailing: IconButton(
+                icon: Icon(Icons.remove_circle_outline),
+                onPressed: () {
+                  _carrito.eliminar(_carrito.productos[index]);
+                  setState(() {});
+                },
+              ),
+              title: _carrito.productos[index].nombre.text.make(),
+            ),
+          );
   }
 }

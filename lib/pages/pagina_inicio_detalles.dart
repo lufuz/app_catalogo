@@ -1,4 +1,5 @@
 import 'package:app_catalogo/models/catalogo.dart';
+import 'package:app_catalogo/widgets/home_widgets/agregar_al_carrito.dart';
 import 'package:app_catalogo/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -23,14 +24,9 @@ class HomeDetailsPage extends StatelessWidget {
         buttonPadding: EdgeInsets.zero,
         children: [
           "\$${catalogo.precio}".text.bold.xl3.make(),
-          ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  )),
-                  child: "Añadir".text.make())
-              .wh(100, 45),
+          AddToCarrito(
+            catalogo: catalogo,
+          ).wh(100, 45),
         ],
       ).p32(),
       body: SafeArea(
