@@ -1,8 +1,6 @@
 //@dart=2.9
-
 import 'package:app_catalogo/db.dart';
 import 'package:app_catalogo/models/catalogo.dart';
-import 'package:app_catalogo/pages/pagina_carrito.dart';
 import 'package:app_catalogo/utils/routes.dart';
 import 'package:app_catalogo/widgets/themes.dart';
 import 'package:flutter/cupertino.dart';
