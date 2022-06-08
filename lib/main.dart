@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
       //Se declara la ruta de inicio, es decir, la interfaz que se mostrará al ejecutar la aplicación, así como las demás rutas disponibles para navegar por la app
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       routes: {
         "/": (context) => Login(),
         MyRoutes.homeRoute: (context) => HomePage(),

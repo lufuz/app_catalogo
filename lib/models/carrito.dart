@@ -30,6 +30,11 @@ class CarritoModelo {
       productos.fold(0, (total, current) => total + current.precio);
 }
 
+/* VxMutation es de ayuda para que los componentes reaccionen en el
+momento que en el carrito se agreguen y/o eliminen productos, de esta
+forma tanto el total como la burbuja de productos en la lista de compras
+pueden actualizarse */
+
 class AddMutation extends VxMutation<MyTienda> {
   final Producto producto;
 
